@@ -1,0 +1,200 @@
+/* Stile condiviso da tutte le pagine del sito Bibliocabina. */
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+
+/* Carattere Inter ospitato qui (licenza OFL, vedi fonts/LICENSE): nessuna chiamata a Google Fonts. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/inter-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/inter-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/inter-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* Layout: una colonna stretta, come negli screenshot. Header con menu a sinistra, poi la pagina scelta.
+   Aspetto unico e chiaro per scelta: il sito deve restare identico al riferimento. */
+:root {
+  --paper: #F5F1E8;     /* avorio carta */
+  --paper-2: #ECE5D6;   /* avorio più scuro per riquadri */
+  --ink: #234536;       /* verde bosco scuro, titoli e pulsante */
+  --muted: #516258;     /* testo secondario */
+  --red: #B53A2E;       /* rosso cabina */
+  --forest: #2C5340;    /* riquadro verde */
+  --on-forest: #F5F1E8;
+  --line: #D8D1C0;
+  --scrim: rgba(20, 36, 28, 0.45);
+  --white: #FFFFFF;     /* fondo bianco del logo */
+  --field: #FBF9F3;     /* campi del modulo */
+  --field-line: #857F6B;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.5 var(--font-body);
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, p, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+h1, h2, h3 { text-wrap: balance; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+h1:focus { outline: none; }
+
+.wrap {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.ico { width: 1.5rem; height: 1.5rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Header */
+.top { display: flex; align-items: center; gap: 0.6rem; padding-block: 1rem; }
+.menu-btn, .close-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.75rem; height: 2.75rem; flex: none; padding: 0;
+  border: 0; border-radius: 12px; background: transparent; color: var(--ink); cursor: pointer;
+}
+.menu-btn { margin-left: -0.5rem; }
+.menu-btn:hover, .close-btn:hover { background: var(--paper-2); }
+.menu-btn svg { width: 1.75rem; height: 1.75rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.brand { display: flex; align-items: center; gap: 0.7rem; min-width: 0; min-height: 44px; text-decoration: none; }
+.logo { width: 2.5rem; height: 2.5rem; flex: none; border-radius: 10px; background: var(--red); color: var(--paper); display: inline-flex; align-items: center; justify-content: center; }
+.logo .ico { width: 1.4rem; height: 1.4rem; }
+.brand-text { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+.brand-text strong { font: 700 1.2rem/1.1 var(--font-body); letter-spacing: 0.01em; text-transform: uppercase; }
+.brand-text small { font: 500 0.75rem/1.2 var(--font-body); letter-spacing: 0.03em; text-transform: uppercase; color: var(--muted); }
+.rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
+
+/* Pagine */
+.page { display: flex; flex-direction: column; gap: 1.5rem; padding-block: 1.5rem 2rem; }
+.intro { display: flex; flex-direction: column; gap: 0.65rem; }
+.eyebrow { font: 600 0.875rem/1.3 var(--font-body); letter-spacing: 0.01em; text-transform: uppercase; color: var(--red); }
+.page h1 { font: 700 clamp(1.75rem, 7.2vw, 2.4rem)/1.15 var(--font-body); letter-spacing: -0.01em; }
+.lead { font-size: 1.0625rem; line-height: 1.5; color: var(--muted); margin-top: 0.25rem; }
+.page h2 { font: 700 1.5rem/1.2 var(--font-body); letter-spacing: -0.005em; }
+
+.cta { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
+  min-height: 3rem; padding: 0.7rem 0.9rem; border: 1.5px solid var(--ink); border-radius: 14px;
+  font: 600 1rem/1.2 var(--font-body); text-decoration: none; white-space: nowrap;
+}
+.btn .ico { width: 1.25rem; height: 1.25rem; }
+.btn-solid { background: var(--ink); color: var(--paper); }
+.btn-solid:hover { background: #1A352A; }
+.btn-outline { background: transparent; color: var(--ink); }
+.btn-outline:hover { background: var(--paper-2); }
+
+.hero-photo { margin: 0; }
+.photo-pair { display: flex; align-items: flex-start; justify-content: center; gap: 0.5rem; }
+.photo-pair img { display: block; min-width: 0; height: auto; border-radius: 16px; }
+.photo-pair .ph-cabina { flex: 0.75 1 0; }      /* 960 x 1280 */
+.photo-pair .ph-dipinta { flex: 0.5563 1 0; }   /* 890 x 1600 */
+
+.acts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; text-align: center; }
+.act { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; padding: 0.25rem; text-decoration: none; font-size: 1.0625rem; line-height: 1.3; }
+.act .ico { width: 1.75rem; height: 1.75rem; color: var(--red); }
+.act:hover { color: var(--red); }
+
+.sub { color: var(--muted); }
+.head-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+/* Copertine */
+.covers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; }
+.covers a { display: flex; flex-direction: column; gap: 0.45rem; text-decoration: none; }
+.cover { display: block; aspect-ratio: 3 / 4; max-width: 100%; border-radius: 14px; overflow: hidden; border: 1px solid rgba(35, 69, 54, 0.14); background: var(--paper-2); }
+.cover svg { display: block; width: 100%; height: 100%; }
+.cover-label { font-size: 1.0625rem; line-height: 1.3; }
+.covers a:hover .cover-label { color: var(--red); }
+
+/* Riquadro verde */
+.share-card { background: var(--forest); color: var(--on-forest); border-radius: 18px; padding: 1.25rem 1.25rem 1.35rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.page .share-card h2 { font-size: 1.4rem; line-height: 1.25; }
+.share-card p { line-height: 1.5; opacity: 0.95; }
+
+/* Logo: in fondo alla home e in testa a Chi siamo. Il fondo bianco del file è parte del riquadro. */
+.logo-card { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 1.1rem 1.25rem; display: flex; justify-content: center; }
+.logo-card img { display: block; width: min(22rem, 100%); height: auto; }
+
+/* Chi siamo */
+.story { background: var(--paper-2); border-radius: 22px; padding: 1rem 1rem 1.4rem; display: flex; flex-direction: column; gap: 0.9rem; }
+.story h1 { margin-top: -0.2rem; }
+.story p { color: var(--muted); }
+.facts { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 0.4rem; }
+.fact { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0.2rem 0.9rem; align-items: start; }
+.fact .ico { width: 2rem; height: 2rem; color: var(--red); grid-row: span 2; }
+.page .fact h2 { font-size: 1.2rem; line-height: 1.25; }
+.fact p { line-height: 1.45; }
+
+/* Catalogo */
+.books { display: flex; flex-direction: column; gap: 1rem; }
+.book { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 0.8rem; }
+.book-info { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+.page .book-info h2 { font-size: 1.2rem; line-height: 1.25; }
+.author { color: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; margin-top: 0.35rem; font-size: 0.875rem; }
+.genre { font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink); }
+.status { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 500; }
+.status::before { content: ""; width: 0.65rem; height: 0.65rem; border-radius: 50%; background: var(--forest); flex: none; }
+.status.out { color: var(--red); }
+.status.out::before { background: transparent; border: 2px solid var(--red); }
+.note { font-size: 0.875rem; color: var(--muted); }
+
+/* Come funziona e Dove siamo */
+.cards { display: flex; flex-direction: column; gap: 0.9rem; }
+.card { background: var(--paper-2); border-radius: 16px; padding: 1.1rem 1.1rem 1.2rem; display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0.25rem 0.9rem; align-items: start; }
+.card > .ico { width: 2rem; height: 2rem; color: var(--red); grid-row: span 3; }
+.card > .btn { grid-column: 2; justify-self: start; margin-top: 0.5rem; }
+.card .mail-link { color: var(--ink); font-weight: 600; font-size: clamp(0.84rem, 4.4vw, 1rem); display: inline-block; padding: 0.85rem 0; margin: -0.85rem 0; text-decoration: underline; text-underline-offset: 0.2em; overflow-wrap: anywhere; }
+.card .mail-link:hover { color: var(--red); }
+.page .card h2 { font-size: 1.25rem; line-height: 1.25; }
+.card p { color: var(--muted); line-height: 1.45; }
+
+/* Piè di pagina, uguale su ogni pagina */
+.site-foot { display: flex; flex-direction: column; gap: 1rem; padding-bottom: 2rem; }
+.foot-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.8rem 1rem; }
+.foot-logo { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 0.4rem 0.7rem; }
+.foot-logo img { display: block; width: 8.5rem; height: auto; }
+.foot-social { display: flex; gap: 0.5rem; }
+.foot-social a { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border: 1.5px solid var(--ink); border-radius: 12px; color: var(--ink); text-decoration: none; }
+.foot-social a:hover { background: var(--paper-2); border-color: var(--red); color: var(--red); }
+
+/* Contatti */
+.social-cards { display: flex; flex-direction: column; gap: 0.9rem; }
+.social-card { background: var(--paper-2); border-radius: 16px; padding: 1.4rem 1.1rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.7rem; text-align: center; }
+.social-card > .ico { width: 2.5rem; height: 2.5rem; color: var(--red); }
+.page .social-card h2 { font-size: 1.25rem; line-height: 1.25; }
+
+/* Menu a comparsa */
+.scrim { position: fixed; inset: 0; z-index: 20; background: var(--scrim); opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0s linear 0.25s; }
+.drawer {
+  position: fixed; top: 0; bottom: 0; left: 0; z-index: 30; width: min(84vw, 320px);
+  display: flex; flex-direction: column; gap: 0.75rem; overflow-y: auto;
+  padding: calc(1rem + env(safe-area-inset-top, 0px)) 1rem calc(1rem + env(safe-area-inset-bottom, 0px)) calc(1rem + env(safe-area-inset-left, 0px));
+  background: var(--paper); border-right: 1px solid var(--line);
+  transform: translateX(-102%); visibility: hidden;
+  transition: transform 0.25s ease, visibility 0s linear 0.25s;
+}
+body.menu-open { overflow: hidden; }
+body.menu-open .scrim { opacity: 1; visibility: visible; transition: opacity 0.25s ease, visibility 0s; }
+body.menu-open .drawer { transform: none; visibility: visible; transition: transform 0.25s ease, visibility 0s; box-shadow: 8px 0 32px rgba(20, 36, 28, 0.18); }
+.drawer-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.drawer-title { font: 600 0.875rem/1.3 var(--font-body); letter-spacing: 0.01em; text-transform: uppercase; color: var(--red); }
+.drawer-list { display: flex; flex-direction: column; gap: 0.2rem; }
+.drawer-list a { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 0.75rem; border-radius: 12px; text-decoration: none; font: 600 1.125rem/1.2 var(--font-body); }
+.drawer-list a .ico { color: var(--red); }
+.drawer-list a:hover, .drawer-list a[aria-current="page"] { background: var(--paper-2); }
+.drawer-foot { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); font: 500 0.75rem/1.3 var(--font-body); letter-spacing: 0.03em; text-transform: uppercase; color: var(--muted); }
+
+.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+@media (max-width: 360px) {
+  .book { grid-template-columns: 4.5rem minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scrim, .drawer, body.menu-open .scrim, body.menu-open .drawer { transition: none; }
+}

@@ -3,19 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Bibliocabina a Castelforte (LT): una cabina telefonica diventata biblioteca di strada. Prendi un libro, lasciane uno. Progetto di Teniamoci per Mano APS.">
-<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <title>La Bibliocabina di Castelforte – Libri in condivisione</title>
+<meta name="description" content="Bibliocabina a Castelforte (LT): una cabina telefonica diventata biblioteca di strada. Prendi un libro, lasciane uno. Progetto di Teniamoci per Mano APS.">
 <link rel="canonical" href="https://bibliocabina.github.io/bibliocabina-site/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="La Bibliocabina">
 <meta property="og:title" content="La Bibliocabina di Castelforte – Libri in condivisione">
-<meta property="og:description" content="Una vecchia cabina telefonica trasformata in biblioteca di strada: prendi un libro, lasciane uno, fai vivere le storie.">
+<meta property="og:description" content="Bibliocabina a Castelforte (LT): una cabina telefonica diventata biblioteca di strada. Prendi un libro, lasciane uno. Progetto di Teniamoci per Mano APS.">
 <meta property="og:url" content="https://bibliocabina.github.io/bibliocabina-site/">
 <meta property="og:image" content="https://bibliocabina.github.io/bibliocabina-site/assets/cabina-castelforte.jpg">
 <meta property="og:image:alt" content="La cabina telefonica di Castelforte trasformata in Bibliocabina">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -54,299 +56,18 @@
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* Layout: una colonna stretta, come negli screenshot. Header con menu a sinistra, poi la pagina scelta.
-   Aspetto unico e chiaro per scelta: il sito deve restare identico al riferimento. */
-:root {
-  --paper: #F5F1E8;     /* avorio carta */
-  --paper-2: #ECE5D6;   /* avorio più scuro per riquadri */
-  --ink: #234536;       /* verde bosco scuro, titoli e pulsante */
-  --muted: #516258;     /* testo secondario */
-  --red: #B53A2E;       /* rosso cabina */
-  --forest: #2C5340;    /* riquadro verde */
-  --on-forest: #F5F1E8;
-  --line: #D8D1C0;
-  --scrim: rgba(20, 36, 28, 0.45);
-  --white: #FFFFFF;     /* fondo bianco del logo */
-  --field: #FBF9F3;     /* campi del modulo */
-  --field-line: #857F6B;
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  color-scheme: light;
-}
-
-*, *::before, *::after { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font: 400 1.0625rem/1.5 var(--font-body);
-  -webkit-text-size-adjust: 100%;
-}
-h1, h2, h3, p, ul { margin: 0; padding: 0; }
-ul { list-style: none; }
-h1, h2, h3 { text-wrap: balance; }
-a { color: inherit; }
-:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
-h1:focus { outline: none; }
-
-.wrap {
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-
-.ico { width: 1.5rem; height: 1.5rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-/* Header */
-.top { display: flex; align-items: center; gap: 0.6rem; padding-block: 1rem; }
-.menu-btn, .close-btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 2.75rem; height: 2.75rem; flex: none; padding: 0;
-  border: 0; border-radius: 12px; background: transparent; color: var(--ink); cursor: pointer;
-}
-.menu-btn { margin-left: -0.5rem; }
-.menu-btn:hover, .close-btn:hover { background: var(--paper-2); }
-.menu-btn svg { width: 1.75rem; height: 1.75rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
-.brand { display: flex; align-items: center; gap: 0.7rem; min-width: 0; min-height: 44px; text-decoration: none; }
-.logo { width: 2.5rem; height: 2.5rem; flex: none; border-radius: 10px; background: var(--red); color: var(--paper); display: inline-flex; align-items: center; justify-content: center; }
-.logo .ico { width: 1.4rem; height: 1.4rem; }
-.brand-text { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
-.brand-text strong { font: 700 1.2rem/1.1 var(--font-body); letter-spacing: 0.01em; text-transform: uppercase; }
-.brand-text small { font: 500 0.75rem/1.2 var(--font-body); letter-spacing: 0.03em; text-transform: uppercase; color: var(--muted); }
-.rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
-
-/* Pagine */
-.page { display: flex; flex-direction: column; gap: 1.5rem; padding-block: 1.5rem 2rem; }
-.intro { display: flex; flex-direction: column; gap: 0.65rem; }
-.eyebrow { font: 600 0.875rem/1.3 var(--font-body); letter-spacing: 0.01em; text-transform: uppercase; color: var(--red); }
-.page h1 { font: 700 clamp(1.75rem, 7.2vw, 2.4rem)/1.15 var(--font-body); letter-spacing: -0.01em; }
-.lead { font-size: 1.0625rem; line-height: 1.5; color: var(--muted); margin-top: 0.25rem; }
-.page h2 { font: 700 1.5rem/1.2 var(--font-body); letter-spacing: -0.005em; }
-
-.cta { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
-  min-height: 3rem; padding: 0.7rem 0.9rem; border: 1.5px solid var(--ink); border-radius: 14px;
-  font: 600 1rem/1.2 var(--font-body); text-decoration: none; white-space: nowrap;
-}
-.btn .ico { width: 1.25rem; height: 1.25rem; }
-.btn-solid { background: var(--ink); color: var(--paper); }
-.btn-solid:hover { background: #1A352A; }
-.btn-outline { background: transparent; color: var(--ink); }
-.btn-outline:hover { background: var(--paper-2); }
-
-.hero-photo { margin: 0; }
-.photo-pair { display: flex; align-items: flex-start; justify-content: center; gap: 0.5rem; }
-.photo-pair img { display: block; min-width: 0; height: auto; border-radius: 16px; }
-.photo-pair .ph-cabina { flex: 0.75 1 0; }      /* 960 x 1280 */
-.photo-pair .ph-dipinta { flex: 0.5563 1 0; }   /* 890 x 1600 */
-
-.acts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; text-align: center; }
-.act { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; padding: 0.25rem; text-decoration: none; font-size: 1.0625rem; line-height: 1.3; }
-.act .ico { width: 1.75rem; height: 1.75rem; color: var(--red); }
-.act:hover { color: var(--red); }
-
-.sub { color: var(--muted); }
-.head-group { display: flex; flex-direction: column; gap: 0.5rem; }
-
-/* Copertine */
-.covers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; }
-.covers a { display: flex; flex-direction: column; gap: 0.45rem; text-decoration: none; }
-.cover { display: block; aspect-ratio: 3 / 4; max-width: 100%; border-radius: 14px; overflow: hidden; border: 1px solid rgba(35, 69, 54, 0.14); background: var(--paper-2); }
-.cover svg { display: block; width: 100%; height: 100%; }
-.cover-label { font-size: 1.0625rem; line-height: 1.3; }
-.covers a:hover .cover-label { color: var(--red); }
-
-/* Riquadro verde */
-.share-card { background: var(--forest); color: var(--on-forest); border-radius: 18px; padding: 1.25rem 1.25rem 1.35rem; display: flex; flex-direction: column; gap: 0.6rem; }
-.page .share-card h2 { font-size: 1.4rem; line-height: 1.25; }
-.share-card p { line-height: 1.5; opacity: 0.95; }
-
-/* Logo: in fondo alla home e in testa a Chi siamo. Il fondo bianco del file è parte del riquadro. */
-.logo-card { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 1.1rem 1.25rem; display: flex; justify-content: center; }
-.logo-card img { display: block; width: min(22rem, 100%); height: auto; }
-
-/* Commenti */
-.comments { display: flex; flex-direction: column; gap: 1.1rem; }
-.c-form { display: flex; flex-direction: column; gap: 0.9rem; }
-.c-form fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: flex; flex-direction: column; gap: 0.9rem; }
-.field { display: flex; flex-direction: column; gap: 0.35rem; }
-.field label { font: 600 0.9rem/1.3 var(--font-body); }
-.field input, .field textarea { width: 100%; font: 400 1.0625rem/1.4 var(--font-body); color: var(--ink); background: var(--field); border: 1.5px solid var(--field-line); border-radius: 12px; padding: 0.7rem 0.85rem; }
-.field textarea { resize: vertical; min-height: 7rem; }
-.field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; border-color: var(--red); }
-.check { display: grid; grid-template-columns: 1.25rem minmax(0, 1fr); gap: 0.7rem; align-items: start; font-size: 0.9375rem; line-height: 1.45; color: var(--muted); }
-.check input { width: 1.25rem; height: 1.25rem; margin: 0.1rem 0 0; accent-color: var(--forest); }
-.c-note { padding: 0.8rem 1rem; border-radius: 12px; background: var(--paper-2); font-size: 0.9375rem; line-height: 1.45; }
-.c-msg { font-size: 0.9375rem; line-height: 1.4; }
-.c-msg:empty { display: none; }
-.c-msg.err { color: var(--red); }
-.c-msg.ok { color: var(--forest); font-weight: 600; }
-.c-form .btn { align-self: flex-start; }
-.c-form .btn:disabled { opacity: 0.55; cursor: default; }
-.c-list { display: flex; flex-direction: column; gap: 0.8rem; }
-.c-item { background: var(--paper-2); border-radius: 14px; padding: 0.9rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.35rem; }
-.c-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.2rem 0.8rem; }
-.c-head strong { font-weight: 700; overflow-wrap: anywhere; }
-.c-head time { font-size: 0.8125rem; color: var(--muted); }
-.c-item p { overflow-wrap: anywhere; white-space: pre-line; }
-.c-admin { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; margin-top: 0.3rem; font-size: 0.8125rem; color: var(--muted); }
-.c-admin span { overflow-wrap: anywhere; min-width: 0; }
-.c-admin button { font: 600 0.8125rem/1 var(--font-body); padding: 0.5rem 0.75rem; border: 1.5px solid var(--red); border-radius: 10px; background: transparent; color: var(--red); cursor: pointer; }
-.c-empty { color: var(--muted); padding: 0.9rem 1rem; border: 1.5px dashed var(--field-line); border-radius: 14px; }
-/* Chi siamo */
-.story { background: var(--paper-2); border-radius: 22px; padding: 1rem 1rem 1.4rem; display: flex; flex-direction: column; gap: 0.9rem; }
-.story h1 { margin-top: -0.2rem; }
-.story p { color: var(--muted); }
-.facts { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 0.4rem; }
-.fact { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0.2rem 0.9rem; align-items: start; }
-.fact .ico { width: 2rem; height: 2rem; color: var(--red); grid-row: span 2; }
-.page .fact h2 { font-size: 1.2rem; line-height: 1.25; }
-.fact p { line-height: 1.45; }
-
-/* Catalogo */
-.books { display: flex; flex-direction: column; gap: 1rem; }
-.book { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 0.8rem; }
-.book-info { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
-.page .book-info h2 { font-size: 1.2rem; line-height: 1.25; }
-.author { color: var(--muted); }
-.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; margin-top: 0.35rem; font-size: 0.875rem; }
-.genre { font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink); }
-.status { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 500; }
-.status::before { content: ""; width: 0.65rem; height: 0.65rem; border-radius: 50%; background: var(--forest); flex: none; }
-.status.out { color: var(--red); }
-.status.out::before { background: transparent; border: 2px solid var(--red); }
-.note { font-size: 0.875rem; color: var(--muted); }
-
-/* Come funziona e Dove siamo */
-.cards { display: flex; flex-direction: column; gap: 0.9rem; }
-.card { background: var(--paper-2); border-radius: 16px; padding: 1.1rem 1.1rem 1.2rem; display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0.25rem 0.9rem; align-items: start; }
-.card > .ico { width: 2rem; height: 2rem; color: var(--red); grid-row: span 3; }
-.card > .btn { grid-column: 2; justify-self: start; margin-top: 0.5rem; }
-.card .mail-link { color: var(--ink); font-weight: 600; font-size: clamp(0.84rem, 4.4vw, 1rem); display: inline-block; padding: 0.85rem 0; margin: -0.85rem 0; text-decoration: underline; text-underline-offset: 0.2em; overflow-wrap: anywhere; }
-.card .mail-link:hover { color: var(--red); }
-.page .card h2 { font-size: 1.25rem; line-height: 1.25; }
-.card p { color: var(--muted); line-height: 1.45; }
-.todo { color: var(--ink) !important; font-style: italic; border-bottom: 1px dashed var(--forest); width: fit-content; max-width: 100%; overflow-wrap: anywhere; }
-
-/* Elenco contatti e iscritti, solo gestori */
-.subs { display: flex; flex-direction: column; gap: 0.8rem; padding: 1.1rem; border: 1.5px dashed var(--field-line); border-radius: 16px; }
-.subs h3 { font: 700 1.2rem/1.25 var(--font-body); }
-.subs-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.subs-actions .btn { white-space: normal; text-align: center; }
-.subs-list { display: flex; flex-direction: column; gap: 0.5rem; max-height: 22rem; overflow-y: auto; }
-.subs-list li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.15rem 0.8rem; padding: 0.6rem 0.75rem; border-radius: 10px; background: var(--paper-2); font-size: 0.9375rem; min-width: 0; }
-.subs-list strong { font-weight: 600; overflow-wrap: anywhere; min-width: 0; }
-.subs-list .tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; }
-.subs-list .tag.yes { color: var(--forest); }
-.subs-list .tag.no { color: var(--muted); }
-
-/* Piè di pagina, uguale su ogni pagina */
-.site-foot { display: flex; flex-direction: column; gap: 1rem; padding-bottom: 2rem; }
-.foot-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.8rem 1rem; }
-.foot-logo { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 0.4rem 0.7rem; }
-.foot-logo img { display: block; width: 8.5rem; height: auto; }
-.foot-social { display: flex; gap: 0.5rem; }
-.foot-social a { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border: 1.5px solid var(--ink); border-radius: 12px; color: var(--ink); text-decoration: none; }
-.foot-social a:hover { background: var(--paper-2); border-color: var(--red); color: var(--red); }
-.foot-legal a { display: inline-flex; align-items: center; min-height: 44px; font: 500 0.9375rem/1.3 var(--font-body); color: var(--muted); text-underline-offset: 0.2em; }
-.foot-legal a:hover { color: var(--red); }
-
-/* Informativa privacy */
-.legal { display: flex; flex-direction: column; gap: 1.6rem; }
-.legal section { display: flex; flex-direction: column; gap: 0.6rem; }
-.page .legal h2 { font: 700 1.2rem/1.25 var(--font-body); }
-.legal p, .legal li { color: var(--muted); line-height: 1.55; overflow-wrap: anywhere; }
-.legal strong { color: var(--ink); font-weight: 600; }
-.legal ul { list-style: disc; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.45rem; }
-.legal a, .note a { color: var(--ink); font-weight: 600; text-underline-offset: 0.2em; }
-.legal a:hover, .note a:hover { color: var(--red); }
-.legal-end { display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; padding-top: 0.4rem; border-top: 1px solid var(--line); }
-.legal-end p { font-size: 0.9375rem; color: var(--muted); padding-top: 0.9rem; }
-
-/* Contatti */
-.social-cards { display: flex; flex-direction: column; gap: 0.9rem; }
-.social-card { background: var(--paper-2); border-radius: 16px; padding: 1.4rem 1.1rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.7rem; text-align: center; }
-.social-card > .ico { width: 2.5rem; height: 2.5rem; color: var(--red); }
-.page .social-card h2 { font-size: 1.25rem; line-height: 1.25; }
-
-/* Menu a comparsa */
-.scrim { position: fixed; inset: 0; z-index: 20; background: var(--scrim); opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0s linear 0.25s; }
-.drawer {
-  position: fixed; top: 0; bottom: 0; left: 0; z-index: 30; width: min(84vw, 320px);
-  display: flex; flex-direction: column; gap: 0.75rem; overflow-y: auto;
-  padding: calc(1rem + env(safe-area-inset-top, 0px)) 1rem calc(1rem + env(safe-area-inset-bottom, 0px)) calc(1rem + env(safe-area-inset-left, 0px));
-  background: var(--paper); border-right: 1px solid var(--line);
-  transform: translateX(-102%); visibility: hidden;
-  transition: transform 0.25s ease, visibility 0s linear 0.25s;
-}
-body.menu-open { overflow: hidden; }
-body.menu-open .scrim { opacity: 1; visibility: visible; transition: opacity 0.25s ease, visibility 0s; }
-body.menu-open .drawer { transform: none; visibility: visible; transition: transform 0.25s ease, visibility 0s; box-shadow: 8px 0 32px rgba(20, 36, 28, 0.18); }
-.drawer-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.drawer-title { font: 600 0.875rem/1.3 var(--font-body); letter-spacing: 0.01em; text-transform: uppercase; color: var(--red); }
-.drawer-list { display: flex; flex-direction: column; gap: 0.2rem; }
-.drawer-list a { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 0.75rem; border-radius: 12px; text-decoration: none; font: 600 1.125rem/1.2 var(--font-body); }
-.drawer-list a .ico { color: var(--red); }
-.drawer-list a:hover, .drawer-list a[aria-current="page"] { background: var(--paper-2); }
-.drawer-foot { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); font: 500 0.75rem/1.3 var(--font-body); letter-spacing: 0.03em; text-transform: uppercase; color: var(--muted); }
-
-.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
-
-@media (max-width: 360px) {
-  .book { grid-template-columns: 4.5rem minmax(0, 1fr); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .scrim, .drawer, body.menu-open .scrim, body.menu-open .drawer { transition: none; }
-}
-</style>
+<script>
+/* Vecchi link con # (es. .../#catalogo): portano alla pagina vera. */
+(function () {
+  var pages = { 'chi-siamo': 1, 'catalogo': 1, 'come-funziona': 1, 'dove-siamo': 1, 'contatti': 1 };
+  var h = (location.hash || '').slice(1);
+  if (pages[h]) location.replace(h + '/');
+})();
+</script>
 </head>
 <body>
-<!-- Icone e copertine riutilizzabili -->
 <svg class="defs" aria-hidden="true" focusable="false">
   <defs>
-    <symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
-    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></symbol>
-    <symbol id="i-book-heart" viewBox="0 0 24 24"><path d="M16 8.2A2.22 2.22 0 0 0 13.8 6c-.8 0-1.4.3-1.8.9-.4-.6-1-.9-1.8-.9A2.22 2.22 0 0 0 8 8.2c0 .6.3 1.2.7 1.6A226.652 226.652 0 0 0 12 13a404 404 0 0 0 3.3-3.1 2.413 2.413 0 0 0 .7-1.7"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></symbol>
-    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
-    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
-    <symbol id="i-home" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
-    <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
-    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
-
-    <symbol id="cv-mare" viewBox="0 0 150 200">
-      <rect width="150" height="200" fill="#6C9C83"/>
-      <text x="75" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing=".9" fill="#FFFFFF">D. H. LAWRENCE</text>
-      <rect x="20" y="35" width="110" height="126" fill="#F5DDB2" stroke="#2A4B66" stroke-width="2.5"/>
-      <circle cx="108" cy="56" r="9" fill="#F0A23B"/>
-      <ellipse cx="50" cy="52" rx="15" ry="4.5" fill="#FFF7E6"/>
-      <ellipse cx="62" cy="48" rx="9" ry="4" fill="#FFF7E6"/>
-      <ellipse cx="96" cy="76" rx="13" ry="3.6" fill="#FFF7E6"/>
-      <rect x="21.25" y="112" width="107.5" height="48.5" fill="#2B7C99"/>
-      <path d="M21.25 122h107.5M21.25 134h107.5M21.25 146h107.5" stroke="#8ACBD2" stroke-width="1.2" stroke-dasharray="9 7" fill="none"/>
-      <path d="M21.25 160.5V96L30 92 44 88 58 96 70 112 84 128 100 140 128.75 146V160.5Z" fill="#D2623A"/>
-      <path d="M21.25 160.5V120L40 110 52 124 66 142 80 160.5Z" fill="#B3492C"/>
-      <rect x="30" y="68" width="7" height="12" fill="#7FB7D6"/>
-      <rect x="41" y="66" width="8" height="10" fill="#F4A65A"/>
-      <rect x="26" y="80" width="9" height="14" fill="#F2B84B"/>
-      <rect x="36" y="74" width="10" height="17" fill="#E8707E"/>
-      <rect x="47" y="80" width="8" height="12" fill="#F7E6C4"/>
-      <rect x="56" y="86" width="9" height="10" fill="#8CCBC4"/>
-      <path d="M25 80l5.5-4 5.5 4zM35 74l6-4 6 4zM46 80l5-3.5 5 3.5zM55 86l5.5-3.5 5.5 3.5z" fill="#8A3F2B"/>
-      <path d="M29 84h2v3h-2zM39 79h2v3h-2zM50 85h2v3h-2zM59 90h2v3h-2z" fill="#7A3B2A"/>
-      <text x="75" y="181" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9.5" font-weight="700" letter-spacing=".7" fill="#F8F1DD">SEA AND SARDINIA</text>
-    </symbol>
-
     <symbol id="cv-giardino" viewBox="0 0 150 200">
       <rect width="150" height="200" fill="#B9B88F"/>
       <rect x="5" y="5" width="140" height="190" fill="none" stroke="#8F8E6A" stroke-width=".8"/>
@@ -374,7 +95,28 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
       </g>
       <text x="75" y="181" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#3D3B2B">Lina Aras</text>
     </symbol>
-
+    <symbol id="cv-mare" viewBox="0 0 150 200">
+      <rect width="150" height="200" fill="#6C9C83"/>
+      <text x="75" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing=".9" fill="#FFFFFF">D. H. LAWRENCE</text>
+      <rect x="20" y="35" width="110" height="126" fill="#F5DDB2" stroke="#2A4B66" stroke-width="2.5"/>
+      <circle cx="108" cy="56" r="9" fill="#F0A23B"/>
+      <ellipse cx="50" cy="52" rx="15" ry="4.5" fill="#FFF7E6"/>
+      <ellipse cx="62" cy="48" rx="9" ry="4" fill="#FFF7E6"/>
+      <ellipse cx="96" cy="76" rx="13" ry="3.6" fill="#FFF7E6"/>
+      <rect x="21.25" y="112" width="107.5" height="48.5" fill="#2B7C99"/>
+      <path d="M21.25 122h107.5M21.25 134h107.5M21.25 146h107.5" stroke="#8ACBD2" stroke-width="1.2" stroke-dasharray="9 7" fill="none"/>
+      <path d="M21.25 160.5V96L30 92 44 88 58 96 70 112 84 128 100 140 128.75 146V160.5Z" fill="#D2623A"/>
+      <path d="M21.25 160.5V120L40 110 52 124 66 142 80 160.5Z" fill="#B3492C"/>
+      <rect x="30" y="68" width="7" height="12" fill="#7FB7D6"/>
+      <rect x="41" y="66" width="8" height="10" fill="#F4A65A"/>
+      <rect x="26" y="80" width="9" height="14" fill="#F2B84B"/>
+      <rect x="36" y="74" width="10" height="17" fill="#E8707E"/>
+      <rect x="47" y="80" width="8" height="12" fill="#F7E6C4"/>
+      <rect x="56" y="86" width="9" height="10" fill="#8CCBC4"/>
+      <path d="M25 80l5.5-4 5.5 4zM35 74l6-4 6 4zM46 80l5-3.5 5 3.5zM55 86l5.5-3.5 5.5 3.5z" fill="#8A3F2B"/>
+      <path d="M29 84h2v3h-2zM39 79h2v3h-2zM50 85h2v3h-2zM59 90h2v3h-2z" fill="#7A3B2A"/>
+      <text x="75" y="181" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9.5" font-weight="700" letter-spacing=".7" fill="#F8F1DD">SEA AND SARDINIA</text>
+    </symbol>
     <symbol id="cv-stelle" viewBox="0 0 150 200">
       <rect width="150" height="200" fill="#14264A"/>
       <path d="M0 132C34 118 64 96 100 66 120 49 138 36 150 30V200H0Z" fill="#1F3F73"/>
@@ -394,6 +136,18 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
       <text x="75" y="170" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="5" letter-spacing="2.2" fill="#D9C48A">POEMS BY</text>
       <text x="75" y="178" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="5" letter-spacing="2.2" fill="#D9C48A">JUANA GARCIA</text>
     </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></symbol>
+    <symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
   </defs>
 </svg>
 
@@ -404,12 +158,12 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
     <button class="close-btn" id="close-btn" type="button" aria-label="Chiudi il menu"><svg class="ico"><use href="#i-x"/></svg></button>
   </div>
   <ul class="drawer-list">
-    <li><a href="#home" data-page="home"><svg class="ico"><use href="#i-home"/></svg>Home</a></li>
-    <li><a href="#chi-siamo" data-page="chi-siamo"><svg class="ico"><use href="#i-users"/></svg>Chi siamo</a></li>
-    <li><a href="#catalogo" data-page="catalogo"><svg class="ico"><use href="#i-book"/></svg>Catalogo</a></li>
-    <li><a href="#come-funziona" data-page="come-funziona"><svg class="ico"><use href="#i-sprout"/></svg>Come funziona</a></li>
-    <li><a href="#dove-siamo" data-page="dove-siamo"><svg class="ico"><use href="#i-pin"/></svg>Dove siamo</a></li>
-    <li><a href="#contatti" data-page="contatti"><svg class="ico"><use href="#i-mail"/></svg>Contatti</a></li>
+    <li><a href="./" aria-current="page"><svg class="ico"><use href="#i-home"/></svg>Home</a></li>
+    <li><a href="chi-siamo/"><svg class="ico"><use href="#i-users"/></svg>Chi siamo</a></li>
+    <li><a href="catalogo/"><svg class="ico"><use href="#i-book"/></svg>Catalogo</a></li>
+    <li><a href="come-funziona/"><svg class="ico"><use href="#i-sprout"/></svg>Come funziona</a></li>
+    <li><a href="dove-siamo/"><svg class="ico"><use href="#i-pin"/></svg>Dove siamo</a></li>
+    <li><a href="contatti/"><svg class="ico"><use href="#i-mail"/></svg>Contatti</a></li>
   </ul>
   <p class="drawer-foot">Piccoli spazi, grandi storie</p>
 </nav>
@@ -419,7 +173,7 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
     <button class="menu-btn" id="menu-btn" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="drawer">
       <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 9h18M5 19h11"/></svg>
     </button>
-    <a class="brand" href="#home" data-page="home" aria-label="La Bibliocabina, vai alla home">
+    <a class="brand" href="./" aria-label="La Bibliocabina, vai alla home">
       <span class="logo"><svg class="ico"><use href="#i-book-open"/></svg></span>
       <span class="brand-text">
         <strong>La Bibliocabina</strong>
@@ -430,8 +184,7 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
   <hr class="rule">
 
   <main id="main">
-    <!-- HOME -->
-    <section class="page" id="page-home">
+    <section class="page">
       <div class="intro">
         <p class="eyebrow">Una biblioteca fuori dal comune</p>
         <h1>Una cabina, mille storie.</h1>
@@ -439,8 +192,8 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
       </div>
 
       <div class="cta">
-        <a class="btn btn-solid" href="#catalogo" data-page="catalogo"><svg class="ico"><use href="#i-book-open"/></svg>Esplora i libri</a>
-        <a class="btn btn-outline" href="#come-funziona" data-page="come-funziona">Come funziona<svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-solid" href="catalogo/"><svg class="ico"><use href="#i-book-open"/></svg>Esplora i libri</a>
+        <a class="btn btn-outline" href="come-funziona/">Come funziona<svg class="ico"><use href="#i-arrow"/></svg></a>
       </div>
 
       <figure class="hero-photo">
@@ -451,9 +204,9 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
       </figure>
 
       <ul class="acts">
-        <li><a class="act" href="#come-funziona" data-page="come-funziona"><svg class="ico"><use href="#i-book"/></svg>Prendi<br>un libro</a></li>
-        <li><a class="act" href="#come-funziona" data-page="come-funziona"><svg class="ico"><use href="#i-heart"/></svg>Lasciane<br>uno</a></li>
-        <li><a class="act" href="#come-funziona" data-page="come-funziona"><svg class="ico"><use href="#i-sprout"/></svg>Fai vivere<br>storie</a></li>
+        <li><a class="act" href="come-funziona/"><svg class="ico"><use href="#i-book"/></svg>Prendi<br>un libro</a></li>
+        <li><a class="act" href="come-funziona/"><svg class="ico"><use href="#i-heart"/></svg>Lasciane<br>uno</a></li>
+        <li><a class="act" href="come-funziona/"><svg class="ico"><use href="#i-sprout"/></svg>Fai vivere<br>storie</a></li>
       </ul>
 
       <hr class="rule">
@@ -464,15 +217,15 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
       </div>
 
       <ul class="covers">
-        <li><a href="#catalogo" data-page="catalogo">
+        <li><a href="catalogo/">
           <span class="cover"><svg viewBox="0 0 150 200" role="img" aria-label="Copertina di Sea and Sardinia"><use href="#cv-mare" width="150" height="200"/></svg></span>
           <span class="cover-label">Narrativa</span>
         </a></li>
-        <li><a href="#catalogo" data-page="catalogo">
+        <li><a href="catalogo/">
           <span class="cover"><svg viewBox="0 0 150 200" role="img" aria-label="Copertina di The Silent Garden"><use href="#cv-giardino" width="150" height="200"/></svg></span>
           <span class="cover-label">Natura</span>
         </a></li>
-        <li><a href="#catalogo" data-page="catalogo">
+        <li><a href="catalogo/">
           <span class="cover"><svg viewBox="0 0 150 200" role="img" aria-label="Copertina di Starry Night"><use href="#cv-stelle" width="150" height="200"/></svg></span>
           <span class="cover-label">Fantasia</span>
         </a></li>
@@ -482,273 +235,6 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
         <h2>La cultura è più bella quando si condivide.</h2>
         <p>Hai un libro che merita una nuova casa? Portalo in cabina e regalagli un'altra avventura.</p>
       </aside>
-
-      <section class="comments" id="commenti" aria-labelledby="h-commenti">
-        <div class="head-group">
-          <h2 id="h-commenti">Lascia un commento</h2>
-          <p class="sub">Racconta che libro hai preso o lasciato. Per commentare serve la tua email, che non viene mostrata agli altri visitatori.</p>
-        </div>
-
-        <p class="c-note" id="c-note" hidden></p>
-
-        <form class="c-form" id="c-form" novalidate>
-          <fieldset id="c-fields" disabled>
-            <div class="field">
-              <label for="c-nome">Nome</label>
-              <input id="c-nome" name="nome" type="text" autocomplete="name" maxlength="60" required>
-            </div>
-            <div class="field">
-              <label for="c-email">Email</label>
-              <input id="c-email" name="email" type="email" autocomplete="email" maxlength="120" required>
-            </div>
-            <div class="field">
-              <label for="c-testo">Commento</label>
-              <textarea id="c-testo" name="testo" rows="4" maxlength="600" required></textarea>
-            </div>
-            <label class="check" for="c-ok">
-              <input id="c-ok" name="consenso" type="checkbox" required>
-              <span>Accetto il trattamento della mia email per gestire il commento e rispondermi. Non viene mostrata agli altri visitatori.</span>
-            </label>
-            <label class="check" for="c-news">
-              <input id="c-news" name="newsletter" type="checkbox">
-              <span><strong>Facoltativo.</strong> Voglio ricevere la newsletter sulle iniziative dell'associazione. Posso revocare il consenso in qualsiasi momento.</span>
-            </label>
-            <p class="note">Leggi l'<a href="#privacy" data-page="privacy">informativa sulla privacy</a>.</p>
-          </fieldset>
-          <p class="c-msg" id="c-msg" role="status" aria-live="polite"></p>
-          <button class="btn btn-solid" id="c-send" type="submit" disabled>Pubblica il commento</button>
-        </form>
-
-        <ul class="c-list" id="c-list" aria-live="polite">
-          <li class="c-empty">Carico i commenti…</li>
-        </ul>
-
-        <section class="subs" id="subs" hidden aria-labelledby="h-subs">
-          <h3 id="h-subs">Contatti e newsletter</h3>
-          <p class="sub">Solo per chi gestisce il sito. <span id="subs-count">Carico l'elenco…</span></p>
-          <div class="subs-actions">
-            <button class="btn btn-outline" id="subs-news" type="button">Iscritti newsletter (CSV)</button>
-            <button class="btn btn-outline" id="subs-all" type="button">Tutti i contatti (CSV)</button>
-          </div>
-          <p class="c-msg" id="subs-msg" role="status" aria-live="polite"></p>
-          <ul class="subs-list" id="subs-list"></ul>
-        </section>
-      </section>
-
-    </section>
-
-    <!-- CHI SIAMO -->
-    <section class="page" id="page-chi-siamo" hidden>
-      <figure class="logo-card">
-        <img src="assets/Logo-TPM-APS-Aurunco.png" width="336" height="114" alt="Logo di Teniamoci per Mano APS, Distretto Aurunco" decoding="async">
-      </figure>
-      <article class="story">
-        <div class="photo-pair">
-          <img class="ph-cabina" src="assets/cabina-castelforte.jpg" width="960" height="1280" alt="La cabina telefonica di Castelforte, con l'apparecchio ancora all'interno, tra i fiori di oleandro e con vista sui tetti e sulle colline" decoding="async">
-          <img class="ph-dipinta" src="assets/foto_bibliocabina.jpeg" width="890" height="1600" alt="La cabina dipinta di azzurro, con rami, foglie, uccellini e nuvole sul telaio e l'interno arancione con mensole di legno, lucine e alcuni libri, a porta aperta" decoding="async">
-        </div>
-        <p class="eyebrow">La nostra storia</p>
-        <h1>Una vecchia cabina, una nuova storia da raccontare.</h1>
-        <p>Siamo la “TENIAMOCI PER MANO APS” un’associazione di clownterapia che attraverso il volontariato porta sorrisi, emozioni e momenti di spensieratezza in tutta Italia.</p>
-        <p>Nel nostro distretto AURUNCO abbiamo deciso di dare vita a un progetto speciale: trasformare una vecchia cabina telefonica in una piccola libreria di strada. Quella che un tempo era un luogo dove le persone si fermavano per comunicare, oggi è diventata uno spazio dove incontrarsi attraverso le pagine di un libro. Chiunque può prendere in prestito un libro, lasciarne uno in dono o semplicemente contribuire a far circolare la magia della lettura.</p>
-        <p>Abbiamo dato nuova vita a una vecchia cabina, ma soprattutto abbiamo creato uno spazio in cui la cultura si condivide, la gentilezza si moltiplica e le storie continuano a unire le persone. Perché proprio come ci insegna il nostro nome insieme possiamo fare molto di più: tenendoci per mano, una storia alla volta.</p>
-        <ul class="facts">
-          <li class="fact">
-            <svg class="ico"><use href="#i-book-heart"/></svg>
-            <h2>La nostra missione</h2>
-            <p>Promuovere la lettura, il riuso e la condivisione attraverso un piccolo gesto quotidiano.</p>
-          </li>
-          <li class="fact">
-            <svg class="ico"><use href="#i-users"/></svg>
-            <h2>La nostra comunità</h2>
-            <p>Un progetto che vive grazie a chi dona, sceglie e si prende cura dei libri.</p>
-          </li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- CATALOGO -->
-    <section class="page" id="page-catalogo" hidden>
-      <div class="intro">
-        <p class="eyebrow">Il catalogo</p>
-        <h1>Ogni libro ha una nuova destinazione.</h1>
-        <p class="lead">Un piccolo assaggio delle storie che puoi trovare in cabina.</p>
-      </div>
-      <ul class="books">
-        <li class="book">
-          <span class="cover"><svg viewBox="0 0 150 200" role="img" aria-label="Copertina di Sea and Sardinia"><use href="#cv-mare" width="150" height="200"/></svg></span>
-          <div class="book-info">
-            <h2>Sea and Sardinia</h2>
-            <p class="author">D. H. Lawrence</p>
-            <p class="meta"><span class="genre">Narrativa</span><span class="status">In cabina</span></p>
-          </div>
-        </li>
-        <li class="book">
-          <span class="cover"><svg viewBox="0 0 150 200" role="img" aria-label="Copertina di The Silent Garden"><use href="#cv-giardino" width="150" height="200"/></svg></span>
-          <div class="book-info">
-            <h2>The Silent Garden</h2>
-            <p class="author">Lina Aras</p>
-            <p class="meta"><span class="genre">Natura</span><span class="status">In cabina</span></p>
-          </div>
-        </li>
-        <li class="book">
-          <span class="cover"><svg viewBox="0 0 150 200" role="img" aria-label="Copertina di Starry Night"><use href="#cv-stelle" width="150" height="200"/></svg></span>
-          <div class="book-info">
-            <h2>Starry Night</h2>
-            <p class="author">Juana Garcia</p>
-            <p class="meta"><span class="genre">Fantasia</span><span class="status out">In viaggio</span></p>
-          </div>
-        </li>
-      </ul>
-      <p class="note">Titoli di esempio, da sostituire con i libri presenti in cabina. Lo stato dice se il libro è in cabina oppure in viaggio.</p>
-    </section>
-
-    <!-- COME FUNZIONA -->
-    <section class="page" id="page-come-funziona" hidden>
-      <div class="intro">
-        <p class="eyebrow">Come funziona</p>
-        <h1>La cultura è più bella quando si condivide.</h1>
-        <p class="lead">Hai un libro che merita una nuova casa? Portalo in cabina e regalagli un'altra avventura.</p>
-      </div>
-      <ul class="cards">
-        <li class="card">
-          <svg class="ico"><use href="#i-book"/></svg>
-          <h2>Prendi un libro</h2>
-          <p>Sfoglia gli scaffali, scegli una storia e portala con te.</p>
-        </li>
-        <li class="card">
-          <svg class="ico"><use href="#i-heart"/></svg>
-          <h2>Lasciane uno</h2>
-          <p>Ne hai uno che hai già letto? Lascialo a chi verrà dopo di te.</p>
-        </li>
-        <li class="card">
-          <svg class="ico"><use href="#i-sprout"/></svg>
-          <h2>Fai vivere storie</h2>
-          <p>Racconta il libro che hai scelto, passa parola e aiutaci a prenderci cura della cabina.</p>
-        </li>
-      </ul>
-    </section>
-
-    <!-- DOVE SIAMO -->
-    <section class="page" id="page-dove-siamo" hidden>
-      <div class="intro">
-        <p class="eyebrow">Dove siamo</p>
-        <h1>Dove trovare la cabina.</h1>
-        <p class="lead">Posizione della cabina e informazioni per partecipare.</p>
-      </div>
-      <ul class="cards">
-        <li class="card">
-          <svg class="ico"><use href="#i-pin"/></svg>
-          <p>Piazza Francesco Petronio</p>
-          <p>Castelforte (LT)</p>
-          <a class="btn btn-outline" href="https://maps.app.goo.gl/ehPVaKDYmYYoMXs57" target="_blank" rel="noopener noreferrer">Apri su Google Maps<svg class="ico"><use href="#i-arrow"/></svg></a>
-        </li>
-        <li class="card">
-          <svg class="ico"><use href="#i-mail"/></svg>
-          <h2>Partecipa</h2>
-          <p>Hai libri da donare, un'idea o vuoi dare una mano? Scrivici.</p>
-          <p><a class="mail-link" href="mailto:bibliocabina@yahoo.com">bibliocabina@yahoo.com</a></p>
-        </li>
-      </ul>
-    </section>
-    <!-- CONTATTI -->
-    <section class="page" id="page-contatti" hidden>
-      <div class="intro">
-        <p class="eyebrow">Contatti</p>
-        <h1>Seguici e scrivici.</h1>
-        <p class="lead">Per donare libri, proporre un'idea o dare una mano, trovi i nostri riferimenti qui sotto.</p>
-      </div>
-      <ul class="social-cards">
-        <li class="social-card">
-          <svg class="ico"><use href="#i-instagram"/></svg>
-          <h2>Instagram</h2>
-          <a class="btn btn-outline" href="https://www.instagram.com/invites/contact/?utm_content=scoolyx&amp;exln=1ppq2omgncle7" target="_blank" rel="noopener noreferrer">Apri Instagram<svg class="ico"><use href="#i-arrow"/></svg></a>
-        </li>
-        <li class="social-card">
-          <svg class="ico"><use href="#i-facebook"/></svg>
-          <h2>Facebook</h2>
-          <a class="btn btn-outline" href="https://www.facebook.com/share/1FbUaeCJua/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Apri Facebook<svg class="ico"><use href="#i-arrow"/></svg></a>
-        </li>
-      </ul>
-    </section>
-
-    <!-- PRIVACY -->
-    <section class="page" id="page-privacy" hidden>
-      <div class="intro">
-        <p class="eyebrow">Informativa</p>
-        <h1>Informativa sulla privacy.</h1>
-        <p class="lead">Come trattiamo i dati di chi commenta sul sito della Bibliocabina e di chi sceglie di ricevere la newsletter. Informativa ai sensi dell'art. 13 del Regolamento (UE) 2016/679 (GDPR).</p>
-      </div>
-
-      <div class="legal">
-        <section aria-labelledby="pv-1">
-          <h2 id="pv-1">1. Chi è il titolare del trattamento</h2>
-          <p>Il titolare è <strong>Teniamoci per Mano APS – Distretto Aurunco</strong>, l'associazione che gestisce la Bibliocabina.</p>
-          <p>Sede legale: <span class="todo">[indirizzo della sede legale]</span>. Codice fiscale: <span class="todo">[codice fiscale]</span>.</p>
-          <p>Per qualsiasi richiesta sui tuoi dati scrivi a <a href="mailto:bibliocabina@yahoo.com">bibliocabina@yahoo.com</a>.</p>
-        </section>
-
-        <section aria-labelledby="pv-2">
-          <h2 id="pv-2">2. Quali dati trattiamo</h2>
-          <ul>
-            <li><strong>Nome</strong> (anche solo un nome di fantasia) e <strong>testo del commento</strong>. Compaiono sul sito, visibili a tutti, insieme alla data. Non scrivere nei commenti dati che non vuoi rendere pubblici.</li>
-            <li><strong>Indirizzo email.</strong> Non viene mostrato agli altri visitatori: può vederlo solo chi gestisce il sito.</li>
-            <li><strong>Le tue scelte sui consensi</strong>, con data e ora: l'accettazione di questa informativa e, se la dai, l'iscrizione alla newsletter.</li>
-            <li><strong>Un identificativo tecnico</strong> dell'account con cui commenti, che serve a collegare il commento ai tuoi dati di contatto.</li>
-          </ul>
-          <p>Non chiediamo dati di categorie particolari, come salute, opinioni politiche o convinzioni religiose.</p>
-        </section>
-
-        <section aria-labelledby="pv-3">
-          <h2 id="pv-3">3. Perché li trattiamo e su quale base</h2>
-          <ul>
-            <li><strong>Pubblicare il tuo commento e risponderti.</strong> Base giuridica: il tuo consenso (art. 6, par. 1, lett. a, GDPR), che dai spuntando la casella nel modulo.</li>
-            <li><strong>Inviarti la newsletter sulle iniziative dell'associazione.</strong> Solo se spunti la casella facoltativa. Base giuridica: il tuo consenso (art. 6, par. 1, lett. a, GDPR).</li>
-          </ul>
-          <p>Il consenso alla newsletter è separato da quello per il commento: non darlo non ti impedisce di commentare. Non facciamo profilazione né prendiamo decisioni automatizzate.</p>
-        </section>
-
-        <section aria-labelledby="pv-4">
-          <h2 id="pv-4">4. Se è obbligatorio fornirli</h2>
-          <p>Nome, email e testo servono per commentare: senza non possiamo pubblicare il commento. L'iscrizione alla newsletter è sempre facoltativa.</p>
-        </section>
-
-        <section aria-labelledby="pv-5">
-          <h2 id="pv-5">5. Per quanto tempo li conserviamo</h2>
-          <p>Commento ed email restano conservati finché non ne chiedi la cancellazione o non revochi il consenso. L'iscrizione alla newsletter dura finché non la revochi. Quando chiedi la cancellazione, togliamo anche il commento dal sito.</p>
-        </section>
-
-        <section aria-labelledby="pv-6">
-          <h2 id="pv-6">6. A chi li comunichiamo</h2>
-          <ul>
-            <li>Alle persone dell'associazione autorizzate a gestire il sito e la newsletter.</li>
-            <li>Al fornitore della piattaforma su cui il sito è pubblicato e i dati sono salvati, che li tratta per nostro conto come fornitore di servizi tecnici.</li>
-          </ul>
-          <p>Non vendiamo né cediamo i tuoi dati a terzi per scopi commerciali. Nome e commento, lo ricordiamo, sono pubblici.</p>
-          <p><span class="todo">[Da confermare: dove si trovano i server del fornitore e con quali garanzie avvengono eventuali trasferimenti fuori dallo Spazio economico europeo]</span></p>
-        </section>
-
-        <section aria-labelledby="pv-7">
-          <h2 id="pv-7">7. Cookie e servizi esterni</h2>
-          <ul>
-            <li>Il sito non usa cookie di profilazione né strumenti di statistica.</li>
-            <li>Per mostrare il carattere Inter, la pagina lo scarica dai server di Google Fonts: Google riceve così l'indirizzo IP del tuo dispositivo.</li>
-            <li>I link a Google Maps, Instagram e Facebook aprono servizi esterni, che hanno le proprie informative sulla privacy.</li>
-          </ul>
-        </section>
-
-        <section aria-labelledby="pv-8">
-          <h2 id="pv-8">8. I tuoi diritti</h2>
-          <p>Puoi chiederci l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento, la portabilità e opporti al trattamento (artt. 15–22 GDPR). Puoi anche revocare in qualsiasi momento il consenso, anche solo quello alla newsletter: la revoca non toglie validità al trattamento fatto prima.</p>
-          <p>Per esercitare i diritti o revocare un consenso scrivi a <a href="mailto:bibliocabina@yahoo.com">bibliocabina@yahoo.com</a>.</p>
-          <p>Se ritieni che i tuoi dati siano trattati in modo scorretto puoi presentare reclamo al <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">Garante per la protezione dei dati personali</a>.</p>
-        </section>
-
-        <div class="legal-end">
-          <p>Ultimo aggiornamento: 1 novembre 2026.</p>
-          <a class="btn btn-outline" href="#home" data-page="home">Torna alla home</a>
-        </div>
-      </div>
     </section>
   </main>
 
@@ -763,306 +249,9 @@ body.menu-open .drawer { transform: none; visibility: visible; transition: trans
         <li><a href="https://www.facebook.com/share/1FbUaeCJua/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="ico"><use href="#i-facebook"/></svg></a></li>
       </ul>
     </div>
-    <p class="foot-legal"><a href="#privacy" data-page="privacy">Informativa sulla privacy</a></p>
   </footer>
 </div>
 
-<script>
-(function () {
-  var pages = ['home', 'chi-siamo', 'catalogo', 'come-funziona', 'dove-siamo', 'contatti', 'privacy'];
-  var els = {};
-  pages.forEach(function (p) { els[p] = document.getElementById('page-' + p); });
-  var links = Array.prototype.slice.call(document.querySelectorAll('.drawer-list a'));
-  var body = document.body;
-  var menuBtn = document.getElementById('menu-btn');
-  var closeBtn = document.getElementById('close-btn');
-  var scrim = document.getElementById('scrim');
-  var drawer = document.getElementById('drawer');
-  var current = 'home';
-
-  function setMenu(open) {
-    body.classList.toggle('menu-open', open);
-    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if (open) closeBtn.focus();
-  }
-
-  function show(name) {
-    if (pages.indexOf(name) < 0) name = 'home';
-    current = name;
-    pages.forEach(function (p) { els[p].hidden = (p !== name); });
-    links.forEach(function (a) {
-      if (a.getAttribute('data-page') === name) a.setAttribute('aria-current', 'page');
-      else a.removeAttribute('aria-current');
-    });
-    window.scrollTo(0, 0);
-  }
-
-  function go(name) {
-    show(name);
-    setMenu(false);
-    try { history.replaceState(null, '', '#' + name); } catch (e) {}
-    var h = els[current].querySelector('h1');
-    if (h) {
-      h.setAttribute('tabindex', '-1');
-      h.focus({ preventScroll: true });
-    }
-  }
-
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest ? e.target.closest('a[data-page]') : null;
-    if (!a) return;
-    e.preventDefault();
-    go(a.getAttribute('data-page'));
-  });
-  menuBtn.addEventListener('click', function () { setMenu(true); });
-  closeBtn.addEventListener('click', function () { setMenu(false); menuBtn.focus(); });
-  scrim.addEventListener('click', function () { setMenu(false); menuBtn.focus(); });
-
-  document.addEventListener('keydown', function (e) {
-    if (!body.classList.contains('menu-open')) return;
-    if (e.key === 'Escape') { setMenu(false); menuBtn.focus(); return; }
-    if (e.key === 'Tab') {
-      var f = drawer.querySelectorAll('a[href], button');
-      var first = f[0], last = f[f.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    }
-  });
-
-  window.addEventListener('hashchange', function () {
-    var h = (location.hash || '').replace('#', '');
-    if (h && h !== current) show(h);
-  });
-
-  show((location.hash || '').replace('#', '') || 'home');
-})();
-</script>
-
-<script>
-/* Commenti e iscritti. I commenti stanno in "commenti" e li vedono tutti.
-   Le email stanno in "iscritti/<id>", un documento per persona che leggono solo i gestori. */
-(function () {
-  var form = document.getElementById('c-form');
-  var fields = document.getElementById('c-fields');
-  var note = document.getElementById('c-note');
-  var msg = document.getElementById('c-msg');
-  var list = document.getElementById('c-list');
-  var sendBtn = document.getElementById('c-send');
-  var subsPanel = document.getElementById('subs');
-  var subsCount = document.getElementById('subs-count');
-  var subsList = document.getElementById('subs-list');
-  var subsMsg = document.getElementById('subs-msg');
-  var subsNews = document.getElementById('subs-news');
-  var subsAll = document.getElementById('subs-all');
-  var db = null, uid = null, canWrite = false, isAdmin = false, downloads = null;
-  var comments = [];   // documenti dei commenti, dal più recente
-  var subs = {};       // iscritti per id, solo per i gestori
-  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  var SEG = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
-  var NO_ACCESS = 'Per lasciare un commento serve un accesso con permesso di scrittura. Chiedi l\'invito a chi gestisce il sito.';
-
-  function setMsg(text, kind) { msg.textContent = text || ''; msg.className = 'c-msg' + (kind ? ' ' + kind : ''); }
-  function setSubsMsg(text, kind) { subsMsg.textContent = text || ''; subsMsg.className = 'c-msg' + (kind ? ' ' + kind : ''); }
-  function setNote(text) { note.textContent = text || ''; note.hidden = !text; }
-  function lock(text) { canWrite = false; fields.disabled = true; sendBtn.disabled = true; setNote(text); }
-  function dateLabel(ms) {
-    try { return new Date(ms).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }); }
-    catch (e) { return ''; }
-  }
-  function stamp(ms) {
-    try { return new Date(ms).toISOString().slice(0, 16).replace('T', ' '); } catch (e) { return ''; }
-  }
-  function showEmpty(text) {
-    list.textContent = '';
-    var li = document.createElement('li');
-    li.className = 'c-empty';
-    li.textContent = text;
-    list.appendChild(li);
-  }
-
-  function adminRow(id, authorUid) {
-    var row = document.createElement('div');
-    row.className = 'c-admin';
-    var mail = document.createElement('span');
-    var s = (typeof authorUid === 'string') ? subs[authorUid] : null;
-    mail.textContent = s && s.email
-      ? 'Email: ' + s.email + ' · Newsletter: ' + (s.newsletter === true ? 'sì' : 'no')
-      : 'Email non disponibile';
-    row.appendChild(mail);
-    var del = document.createElement('button');
-    del.type = 'button';
-    del.textContent = 'Elimina';
-    del.addEventListener('click', function () {
-      if (del.getAttribute('data-sure') !== '1') {
-        del.setAttribute('data-sure', '1');
-        del.textContent = 'Conferma eliminazione';
-        return;
-      }
-      del.disabled = true;
-      db.doc('commenti/' + id).delete().catch(function () {
-        del.disabled = false;
-        del.removeAttribute('data-sure');
-        del.textContent = 'Non riuscito, riprova';
-      });
-    });
-    row.appendChild(del);
-    return row;
-  }
-
-  function render() {
-    if (!comments.length) { showEmpty('Ancora nessun commento. Scrivi il primo.'); return; }
-    list.textContent = '';
-    comments.forEach(function (d) {
-      var c = d.data() || {};
-      var li = document.createElement('li');
-      li.className = 'c-item';
-      var head = document.createElement('div');
-      head.className = 'c-head';
-      var who = document.createElement('strong');
-      who.textContent = String(c.nome || 'Anonimo').slice(0, 60);
-      var when = document.createElement('time');
-      when.textContent = dateLabel(c.at);
-      head.appendChild(who);
-      head.appendChild(when);
-      var body = document.createElement('p');
-      body.textContent = String(c.testo || '').slice(0, 600);
-      li.appendChild(head);
-      li.appendChild(body);
-      if (isAdmin) li.appendChild(adminRow(d.id, c.uid));
-      list.appendChild(li);
-    });
-  }
-
-  function renderSubs(docs) {
-    var news = docs.filter(function (d) { return (d.data() || {}).newsletter === true; }).length;
-    subsCount.textContent = docs.length + (docs.length === 1 ? ' contatto' : ' contatti') +
-      ', di cui ' + news + (news === 1 ? ' iscritto' : ' iscritti') + ' alla newsletter.';
-    subsList.textContent = '';
-    if (!docs.length) {
-      var empty = document.createElement('li');
-      empty.textContent = 'Ancora nessun contatto.';
-      subsList.appendChild(empty);
-      return;
-    }
-    docs.forEach(function (d) {
-      var s = d.data() || {};
-      var li = document.createElement('li');
-      var left = document.createElement('strong');
-      left.textContent = String(s.email || '') + (s.nome ? ' · ' + String(s.nome) : '');
-      var tag = document.createElement('span');
-      tag.className = 'tag ' + (s.newsletter === true ? 'yes' : 'no');
-      tag.textContent = s.newsletter === true ? 'Newsletter' : 'Solo commento';
-      li.appendChild(left);
-      li.appendChild(tag);
-      subsList.appendChild(li);
-    });
-  }
-
-  function csvCell(v) {
-    var s = v == null ? '' : String(v);
-    if (/^[=+\-@\t\r]/.test(s)) s = '\'' + s;
-    return '"' + s.replace(/"/g, '""') + '"';
-  }
-  function exportCsv(onlyNews) {
-    var rows = [['email', 'nome', 'newsletter', 'consenso_newsletter', 'aggiornato']];
-    Object.keys(subs).forEach(function (id) {
-      var s = subs[id];
-      if (onlyNews && s.newsletter !== true) return;
-      rows.push([s.email, s.nome, s.newsletter === true ? 'sì' : 'no', s.newsletterAt ? stamp(s.newsletterAt) : '', s.aggiornato ? stamp(s.aggiornato) : '']);
-    });
-    if (rows.length === 1) { setSubsMsg(onlyNews ? 'Non ci sono ancora iscritti alla newsletter.' : 'Non ci sono ancora contatti.', 'err'); return; }
-    var csv = '﻿' + rows.map(function (r) { return r.map(csvCell).join(','); }).join('\r\n');
-    setSubsMsg('');
-    downloads.save({ filename: onlyNews ? 'iscritti-newsletter.csv' : 'contatti-commenti.csv', data: csv }).then(
-      function () { setSubsMsg('File salvato.', 'ok'); },
-      function (err) { if (!err || err.code !== 'declined') setSubsMsg('Non sono riuscito a preparare il file. Riprova tra poco.', 'err'); }
-    );
-  }
-
-  function init() {
-    var api = window.claude;
-    if (!api || typeof api.use !== 'function') {
-      lock('I commenti non sono ancora attivi su questo sito.');
-      showEmpty('Ancora nessun commento.');
-      return;
-    }
-    Promise.all([api.use('db'), api.use('user'), api.use('downloads')]).then(function (r) {
-      db = r[0];
-      var user = r[1];
-      downloads = r[2];
-      if (!db) {
-        lock(NO_ACCESS);
-        showEmpty('I commenti si vedono a chi ha accesso a questa pagina.');
-        return null;
-      }
-      var asks = user ? [user.id(), user.canEdit(), user.can('data.write')] : [null, false, null];
-      return Promise.all(asks).then(function (v) {
-        uid = (typeof v[0] === 'string' && SEG.test(v[0])) ? v[0] : null;
-        isAdmin = v[1] === true;
-        canWrite = !!uid && v[2] !== false;
-        if (canWrite) { fields.disabled = false; sendBtn.disabled = false; setNote(''); }
-        else { lock(NO_ACCESS); }
-        db.collection('commenti').orderBy('at', 'desc').limit(100).onSnapshot(
-          function (snap) { comments = snap.docs; render(); },
-          function () { showEmpty('Non riesco a caricare i commenti in questo momento.'); }
-        );
-        if (isAdmin) {
-          subsPanel.hidden = false;
-          if (!downloads) { subsNews.hidden = true; subsAll.hidden = true; }
-          db.collection('iscritti').orderBy('aggiornato', 'desc').limit(1000).onSnapshot(
-            function (snap) {
-              subs = {};
-              snap.docs.forEach(function (d) { subs[d.id] = d.data() || {}; });
-              renderSubs(snap.docs);
-              render();
-            },
-            function () { subsCount.textContent = 'Non riesco a caricare l\'elenco in questo momento.'; }
-          );
-        }
-      });
-    }).catch(function () {
-      lock(NO_ACCESS);
-      showEmpty('Non riesco a caricare i commenti in questo momento.');
-    });
-  }
-
-  subsNews.addEventListener('click', function () { if (downloads) exportCsv(true); });
-  subsAll.addEventListener('click', function () { if (downloads) exportCsv(false); });
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!canWrite || !db || sendBtn.disabled) return;
-    var nome = document.getElementById('c-nome').value.trim();
-    var email = document.getElementById('c-email').value.trim();
-    var testo = document.getElementById('c-testo').value.trim();
-    var ok = document.getElementById('c-ok').checked;
-    var news = document.getElementById('c-news').checked;
-    if (!nome) { setMsg('Scrivi il tuo nome.', 'err'); document.getElementById('c-nome').focus(); return; }
-    if (!EMAIL.test(email)) { setMsg('Inserisci un\'email valida, per esempio nome@esempio.it.', 'err'); document.getElementById('c-email').focus(); return; }
-    if (!testo) { setMsg('Scrivi il tuo commento.', 'err'); document.getElementById('c-testo').focus(); return; }
-    if (!ok) { setMsg('Per pubblicare serve il consenso al trattamento dell\'email.', 'err'); document.getElementById('c-ok').focus(); return; }
-    sendBtn.disabled = true;
-    setMsg('Pubblico il commento…');
-    var now = Date.now();
-    db.doc('iscritti/' + uid).set({ email: email, nome: nome, privacy: true, privacyAt: now, newsletter: news, newsletterAt: news ? now : null, aggiornato: now })
-      .then(function () { return db.collection('commenti').add({ uid: uid, nome: nome, testo: testo, at: now }); })
-      .then(function () {
-        form.reset();
-        setMsg('Grazie, il tuo commento è stato pubblicato.' + (news ? ' Ti scriveremo con le novità dell\'associazione.' : ''), 'ok');
-        sendBtn.disabled = false;
-      })
-      .catch(function (err) {
-        var code = err && err.code;
-        if (code === 'invalid_argument') { lock(NO_ACCESS); setMsg('', ''); return; }
-        setMsg(code === 'quota_exceeded'
-          ? 'I commenti sono al limite consentito. Riprova più tardi.'
-          : 'Non sono riuscito a pubblicare il commento. Riprova tra poco.', 'err');
-        sendBtn.disabled = false;
-      });
-  });
-
-  init();
-})();
-</script>
+<script src="assets/menu.js" defer></script>
 </body>
 </html>

@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bibliocabina.github.io/bibliocabina-site/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://bibliocabina.github.io/bibliocabina-site/chi-siamo/</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://bibliocabina.github.io/bibliocabina-site/catalogo/</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://bibliocabina.github.io/bibliocabina-site/come-funziona/</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://bibliocabina.github.io/bibliocabina-site/dove-siamo/</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://bibliocabina.github.io/bibliocabina-site/contatti/</loc>
+    <lastmod>2026-11-12</lastmod>
   </url>
 </urlset>
