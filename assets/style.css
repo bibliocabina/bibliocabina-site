@@ -107,7 +107,11 @@ h1:focus { outline: none; }
 .covers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; }
 .covers a { display: flex; flex-direction: column; gap: 0.45rem; text-decoration: none; }
 .cover { display: block; aspect-ratio: 3 / 4; max-width: 100%; border-radius: 14px; overflow: hidden; border: 1px solid rgba(35, 69, 54, 0.14); background: var(--paper-2); }
-.cover svg { display: block; width: 100%; height: 100%; }
+/* Copertina da foto: sta intera dentro la cornice 3:4, qualunque sia la proporzione del libro. */
+.cover-photo { display: flex; align-items: center; justify-content: center; border: 0; background: transparent; overflow: visible; }
+.cover-photo img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 6px; box-shadow: 0 1px 5px rgba(20, 36, 28, 0.3); }
+/* Senza foto: copertina con il solo titolo. */
+.cover-text { display: flex; align-items: center; justify-content: center; padding: 0.5rem; border: 0; background: var(--forest); color: var(--on-forest); text-align: center; font: 700 0.8125rem/1.2 var(--font-body); overflow-wrap: anywhere; }
 .cover-label { font-size: 1.0625rem; line-height: 1.3; }
 .covers a:hover .cover-label { color: var(--red); }
 
