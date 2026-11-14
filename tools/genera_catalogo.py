@@ -21,7 +21,7 @@ import urllib.request
 from pathlib import Path
 
 RADICE = Path(__file__).resolve().parent.parent
-BASE = "https://bibliocabina.github.io/bibliocabina-site/"
+BASE = "https://bibliocabina.pages.dev/"
 PERCORSO_COPERTINA = re.compile(r"^assets/copertine/[A-Za-z0-9._-]+$")
 
 # pagina -> (modo, prefisso dei percorsi, quanti libri mostrare: 0 = tutti)

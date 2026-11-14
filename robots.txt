@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bibliocabina.pages.dev/sitemap.xml

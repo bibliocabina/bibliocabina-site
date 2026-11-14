@@ -1,13 +1,14 @@
 # bibliocabina-site
 
-Sito statico della Bibliocabina di Castelforte, pubblicato con GitHub Pages:
-https://bibliocabina.github.io/bibliocabina-site/
+Sito statico della Bibliocabina di Castelforte. Indirizzo principale (quello che dichiarano canonical,
+sitemap e dati strutturati): https://bibliocabina.pages.dev/ (Cloudflare Pages).
+La copia su GitHub Pages (bibliocabina.github.io/bibliocabina-site) dichiara lo stesso canonical.
 
 ## Struttura
 
 - `index.html` e le cartelle `chi-siamo/`, `catalogo/`, `come-funziona/`, `dove-siamo/`, `contatti/`: una pagina per cartella
 - `assets/`: stile (`style.css`), menu (`menu.js`), catalogo (`catalogo.js`), font Inter, immagini, `copertine/`
-- `sitemap.xml`: da aggiornare (`lastmod`) quando cambia una pagina
+- `sitemap.xml` e `robots.txt`: la sitemap va aggiornata (`lastmod`) quando cambia una pagina
 
 ## Catalogo dei libri
 
