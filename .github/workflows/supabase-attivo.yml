@@ -1,0 +1,22 @@
+# Una lettura al giorno della tabella "libri", così il progetto Supabase (piano Free)
+# non viene messo in pausa per inattività. Usa solo la chiave pubblica già presente in assets/catalogo.js.
+name: Mantieni attivo il database
+
+on:
+  schedule:
+    - cron: '17 5 * * *'   # ogni giorno alle 05:17 UTC
+  workflow_dispatch: {}
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Leggi un libro dal database
+        run: |
+          curl --fail --silent --show-error --max-time 30 \
+            "https://kbacpvylupvwlesjpulw.supabase.co/rest/v1/libri?select=id&limit=1" \
+            -H "apikey: sb_publishable_H-ySmiy1RDkohfEil3YIoQ_wy_uD0en" \
+            -H "Accept: application/json"
